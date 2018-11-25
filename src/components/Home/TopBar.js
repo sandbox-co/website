@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 	align-items: center;
 	padding-left: 50px;
 	padding-right: 50px;
+	z-index: 1;
 `
 
 const Title = styled.h1`
