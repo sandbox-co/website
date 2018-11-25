@@ -28,7 +28,7 @@ const Background = styled.img`
   bottom: -50%;
   @media (max-width: 800px) {
     top: -480px;
-    min-width: 1000px;
+    width: 1000px;
   }
 `
 
