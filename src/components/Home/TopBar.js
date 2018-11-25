@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import {colors} from '../../lib/styles'
 
 const Wrapper = styled.div`
@@ -21,6 +21,7 @@ const Title = styled.h1`
 	font-size: 40px;
 	font-weight: 700;
 	color: ${colors.black};
+	padding-bottom: 5px;
 `
 
 const Nav = styled.div`
@@ -32,27 +33,35 @@ const Nav = styled.div`
 
 const NavLink = styled.h2`
 	font-size: 24px;
-	font-weight: 500;
+	font-weight: 400;
 	margin-left: 40px;
 	cursor: default;
 	color: ${colors.black};
 	&:hover {
 		cursor: default;
 	}
+	${props => props.active && css`
+		font-weight: 700;
+	`}
+	${props => props.button && css`
+		font-weight: 600;
+		color: ${colors.secondary};
+	`}
 `
 
 class TopBar extends Component {
+
   render() {
     return (
       <Wrapper>
         <Title>sandbox</Title>
         <Nav>
-        	<NavLink>about</NavLink>
+        	<NavLink active>about</NavLink>
         	<NavLink>learn</NavLink>
         	<NavLink>events</NavLink>
         	<NavLink>partners</NavLink>
         	<NavLink>people</NavLink>
-        	<NavLink>stay updated</NavLink>
+        	<NavLink button>stay updated</NavLink>
         </Nav>
       </Wrapper>
     );

@@ -8,6 +8,7 @@ const Wrapper = styled.div`
 	align-items: center;
 	padding-left: 50px;
 	padding-right: 50px;
+  height: 800px;
 `
 
 class About extends Component {
