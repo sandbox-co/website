@@ -6,8 +6,9 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-left: 50px;
-	padding-right: 50px;
+	${'' /* padding-left: 50px; */}
+	${'' /* padding-right: 50px; */}
+	width: 100%;
 	flex: 1;
 `
 
@@ -15,6 +16,7 @@ const Header = styled.div`
 	background-color: ${colors.primary};
 	padding: 1em;
 	justify-content: flex-start;
+	width: 100%;
 `
 
 const Title = styled.h1`
@@ -26,6 +28,7 @@ const Body = styled.div`
 	background-color: ${colors.secondary};
 	padding: 12em;
 	text-align: center;
+	width: 100%;
 `
 
 class About extends Component {
