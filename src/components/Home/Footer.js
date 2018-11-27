@@ -5,7 +5,7 @@ import EmailEntry from "../universal/EmailEntry"
 import footerBackground from "../../assets/footerBackground.png"
 
 const Wrapper = styled.div`
-  padding-top: 400px;
+  padding-top: 40%;
   box-sizing: border-box;
   position: absolute;
   left: 0px;
@@ -21,22 +21,11 @@ const Wrapper = styled.div`
   background-image: url(${footerBackground});
   background-size: 100% auto;
   background-position: center top;
-`
-
-const Background = styled.img`
-  object-fit: contain;
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  overflow: visible;
-  z-index: 1;
-  width: 100%;
-  min-width: 1400px
-  height: auto;
-  bottom: -50%;
-  @media (max-width: 800px) {
-    top: -480px;
-    width: 1000px;
+  background-repeat: no-repeat;
+  @media (max-width: 1000px) {
+    background-size: 1400px auto;
+    background-position: 0px 0px;
+    padding-top: 550px;
   }
 `
 
