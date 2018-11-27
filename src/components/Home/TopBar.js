@@ -6,6 +6,8 @@ import EmailEntry from "../universal/EmailEntry"
 const Wrapper = styled.div`
 	display: flex;
 	height: 80px;
+	box-sizing: border-box;
+	padding-bottom: 10px;
 	background-color: rgba(255, 255, 255, 0.9);
 	position: fixed;
 	top: 0;

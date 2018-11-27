@@ -67,8 +67,6 @@ class About extends Component {
         <Hero>learn to build and ship applications</Hero>
         <Description>bridging the gap between CS education and technical entrepreneurship at Yale</Description>
         <Banner>
-          
-          we turn creative students into<br/>technical superstars
 
           <Dot top={"50%"} left={"100px"} size={30}/>
           <Dot bottom={"30%"} left={"170px"} size={36}/>
@@ -86,6 +84,8 @@ class About extends Component {
           <Ball bottom={"31%"} right={"180px"} size={90}/>
           <Ball bottom={"20%"} right={"140px"} size={80}/>
           <Ball bottom={"24%"} right={"170px"} size={80}/>
+
+          we turn creative students into<br/>technical superstars
 
         </Banner>
       </Wrapper>
