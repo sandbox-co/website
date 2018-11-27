@@ -20,12 +20,12 @@ class Home extends Component {
   render() {
     return (
       <Wrapper>
-        <TopBar/>
         <About/>
         <Learn/>
         <Events/>
         <Partners/>
         <People/>
+        <TopBar/>
         <Footer/>
       </Wrapper>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import {colors} from '../../lib/styles'
 
 const Wrapper = styled.div`
@@ -10,6 +10,9 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  ${props => props.primary && css`
+    background-color: ${colors.secondary};
+  `}
 `
 
 const Input = styled.input`
@@ -24,6 +27,12 @@ const Input = styled.input`
     color: ${colors.halfWhite};
   }
   padding: 8px 0px 8px 15px;
+  ${props => props.primary && css`
+    color: ${colors.white};
+    ::placeholder {
+      color: ${colors.nearWhite};
+    }
+  `}
 `
 
 const Arrow = styled.div`
@@ -38,6 +47,9 @@ const Arrow = styled.div`
     opacity: 1;
     transform: scale(1.08);
   }
+  ${props => props.primary && css`
+    opacity: 0.8;
+  `}
 `
 
 const ArrowImage = styled.img`
@@ -48,9 +60,9 @@ const ArrowImage = styled.img`
 class EmailEntry extends Component {
   render() {
     return (
-      <Wrapper>
-        <Input placeholder={"your email"}/>
-        <Arrow>
+      <Wrapper primary={this.props.primary}>
+        <Input primary={this.props.primary} placeholder={"your email"}/>
+        <Arrow primary={this.props.primary}>
           <ArrowImage src={require("../../assets/emailEntryArrow.png")}/>
         </Arrow>
       </Wrapper>

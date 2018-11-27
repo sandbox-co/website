@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components'
 import {colors} from '../../lib/styles'
+import EmailEntry from "../universal/EmailEntry"
 
 const Wrapper = styled.div`
 	display: flex;
@@ -14,8 +15,8 @@ const Wrapper = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	padding-left: 50px;
-	padding-right: 50px;
-	z-index: 1;
+	padding-right: 30px;
+	z-index: 100;
 `
 
 const Title = styled.h1`
@@ -35,22 +36,55 @@ const Nav = styled.div`
 const NavLink = styled.h2`
 	font-size: 24px;
 	font-weight: 400;
-	margin-left: 40px;
+	padding: 20px;
 	cursor: default;
 	color: ${colors.black};
+	transition: all 150ms cubic-bezier(0.21, 0.94, 0.64, 0.99);
 	&:hover {
 		cursor: default;
+		transform: scale(1.03);
 	}
+	display: block;
+	@media (max-width: 1000px) {
+    display: none;
+  }
 	${props => props.active && css`
 		font-weight: 700;
 	`}
 	${props => props.button && css`
 		font-weight: 600;
 		color: ${colors.secondary};
+		@media (max-width: 1000px) {
+	    display: block;
+	  }
 	`}
 `
 
+const EmailSection = styled.div`
+  position: absolute;
+  display: flex;
+  right: 50px;
+  top: 60px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  transition: all 150ms cubic-bezier(0.21, 0.94, 0.64, 0.99);
+  opacity: 0;
+  ${props => props.visible && css`
+		opacity: 1;
+	`}
+`
+
+
 class TopBar extends Component {
+
+	constructor(props) {
+		super(props)
+		this.state = {
+			emailEntryVisible: false
+		}
+	}
 
   render() {
     return (
@@ -62,8 +96,13 @@ class TopBar extends Component {
         	<NavLink>events</NavLink>
         	<NavLink>partners</NavLink>
         	<NavLink>people</NavLink>
-        	<NavLink button>stay updated</NavLink>
+        	<NavLink button onClick={() => {
+        		this.setState({emailEntryVisible: !this.state.emailEntryVisible})
+        	}}>stay updated</NavLink>
         </Nav>
+        <EmailSection visible={this.state.emailEntryVisible}>
+          <EmailEntry primary/>
+        </EmailSection>
       </Wrapper>
     );
   }

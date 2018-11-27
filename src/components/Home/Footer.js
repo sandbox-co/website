@@ -2,29 +2,37 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 import {colors} from '../../lib/styles'
 import EmailEntry from "../universal/EmailEntry"
+import footerBackground from "../../assets/footerBackground.png"
 
 const Wrapper = styled.div`
-  padding-top: 80px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  padding-top: 400px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	padding-left: 50px;
-	padding-right: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+  overflow: visible;
+  background-image: url(${footerBackground});
+  background-size: 100% auto;
+  background-position: center top;
 `
 
 const Background = styled.img`
-  height: auto;
+  object-fit: contain;
   position: absolute;
   left: 0px;
   right: 0px;
   overflow: visible;
-  z-index: -1;
+  z-index: 1;
   width: 100%;
-  min-width: 1400px;
+  min-width: 1400px
+  height: auto;
   bottom: -50%;
   @media (max-width: 800px) {
     top: -480px;
@@ -35,17 +43,20 @@ const Background = styled.img`
 const Title = styled.h2`
   color: ${colors.halfWhite};
   font-size: 40px;
+  z-index: 2;
 `
 
 const Content = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: row;
+  width: 100%;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: flex-start;
   padding-top: 40px;
   padding-bottom: 100px;
-  width: 100%;
+  z-index: 2;
   @media (max-width: 800px) {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -119,7 +130,7 @@ class Footer extends Component {
   render() {
     return (
       <Wrapper>
-        <Background src={require("../../assets/footerBackground.png")}/>
+        {/*<Background src={require("../../assets/footerBackground.png")}/>*/}
         <Title>sandbox</Title>
         <Content>
           <Address>
