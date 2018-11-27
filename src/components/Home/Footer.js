@@ -7,7 +7,7 @@ import footerBackground from "../../assets/footerBackground.png"
 const Wrapper = styled.div`
   padding-top: 40%;
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
   left: 0px;
   right: 0px;
   bottom: 0px;
@@ -33,6 +33,9 @@ const Title = styled.h2`
   color: ${colors.halfWhite};
   font-size: 40px;
   z-index: 2;
+  @media (max-width: 800px) {
+    padding-top: 20px;
+  }
 `
 
 const Content = styled.div`
