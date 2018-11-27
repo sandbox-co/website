@@ -82,7 +82,7 @@ class About extends Component {
           <Ball top={"34%"} left={"160px"} size={80}/>
           
           <Ball bottom={"20%"} right={"50px"} size={130}/>
-          <Ball bottom={"32%"} right={"100px"} size={110}/>
+          <Ball bottom={"30%"} right={"100px"} size={110}/>
           <Ball bottom={"31%"} right={"180px"} size={90}/>
           <Ball bottom={"20%"} right={"140px"} size={80}/>
           <Ball bottom={"24%"} right={"170px"} size={80}/>
