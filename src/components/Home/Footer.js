@@ -63,7 +63,7 @@ const Address = styled.h3`
   flex-direction: column;
   align-items: flex-start;
   color: ${colors.halfWhite};
-  font-size: 20px;
+  font-size: 24px;
   line-height: 50px;
   font-weight: 600;
   padding-top: 20px;
@@ -104,10 +104,18 @@ const Link = styled.a`
   justify-content: flex-end;
   align-items: center;
   height: 50px;
+  opacity: 0.5;
+  transition: all 150ms cubic-bezier(0.21, 0.94, 0.64, 0.99);
+  text-decoration: none;
+  &:hover {
+    opacity: 0.9;
+    cursor: default;
+    transform: scale(1.02);
+  }
 `
 
 const LinkText = styled.h3`
-  color: ${colors.halfWhite};
+  color: ${colors.white};
   font-size: 24px;
   font-weight: 600;
   margin-right: 15px;
@@ -135,11 +143,11 @@ class Footer extends Component {
             <EmailEntry/>
           </EmailSection>
           <Links>
-            <Link>
+            <Link href="https://github.com/sandbox-co" target="_blank">
               <LinkText>Github</LinkText>
               <LinkImage src={require("../../assets/githubIcon.png")}/>
             </Link>
-            <Link>
+            <Link href="https://medium.com/yale-sandbox" target="_blank">
               <LinkText>Medium</LinkText>
               <LinkImage src={require("../../assets/mediumIcon.png")}/>
             </Link>
