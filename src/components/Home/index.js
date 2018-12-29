@@ -16,6 +16,30 @@ const Wrapper = styled.div`
 	padding-top: 80px;
 `
 
+const BlurredWhiteWrapper = styled.div`
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+`
+
+const BlurredWhite = styled.div`
+  height: 70px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 120%;
+  filter:blur(4px);
+  -o-filter:blur(4px);
+  -ms-filter:blur(4px);
+  -moz-filter:blur(4px);
+  -webkit-filter:blur(4px);
+  background-color: rgba(255, 255, 255, 0.9);
+`
+
 class Home extends Component {
   render() {
     return (
@@ -25,8 +49,11 @@ class Home extends Component {
         <Events/>
         <Partners/>
         <People/>
-        <TopBar/>
         <Footer/>
+        <BlurredWhiteWrapper>
+          <BlurredWhite/>
+        </BlurredWhiteWrapper>
+        <TopBar/>
       </Wrapper>
     );
   }

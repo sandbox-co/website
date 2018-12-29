@@ -5,10 +5,9 @@ import EmailEntry from "../universal/EmailEntry"
 
 const Wrapper = styled.div`
 	display: flex;
-	height: 80px;
+	height: 60px;
 	box-sizing: border-box;
 	padding-bottom: 10px;
-	background-color: rgba(255, 255, 255, 0.9);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -18,7 +17,7 @@ const Wrapper = styled.div`
 	align-items: center;
 	padding-left: 50px;
 	padding-right: 30px;
-	z-index: 100;
+	z-index: 99;
 `
 
 const Title = styled.h1`
@@ -91,6 +90,7 @@ class TopBar extends Component {
   render() {
     return (
       <Wrapper>
+      	
         <Title>sandbox</Title>
         <Nav>
         	<NavLink active>about</NavLink>
